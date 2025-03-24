@@ -23,7 +23,7 @@ def about(request):
     Имя: <b>{author["Имя"]}</b><br>
     Отчество: <b>{author["Отчество"]}</b><br>
     Фамилия: <b>{author["Фамилия"]}</b><br>
-    телефон: <b>{author["Телефон"]}</b><br>
+    телефон: <b>{author["телефон"]}</b><br>
     email: <b>{author["email"]}</b><br>
     """
     return HttpResponse(text)
