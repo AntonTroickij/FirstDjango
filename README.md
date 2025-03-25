@@ -8,3 +8,19 @@
 3. 'pip install -r requirements.txt'
 
 4. 'python manage.py runserver'
+
+## Дополнительно
+1. Полезное дополнение для шаблонов 'Django'
+'''
+ext install batisteo.vscode-gjango
+'''
+
+Добавить в 'settings.json'
+'''
+"emmet.includeLahguages": {
+        "django-html": "html",
+    },
+"files.associations": {
+        "*html": "django-html"
+    }
+'''
