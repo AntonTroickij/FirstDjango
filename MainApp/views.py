@@ -38,7 +38,7 @@ def about(request):
     """
     return HttpResponse(text)
 
-def getitem(request, item_id):
+def get_item(request, item_id):
     """ По указанному id возвращаем имя элемента"""
     for item in items:
         if item['id'] == item_id:
@@ -50,9 +50,8 @@ def getitem(request, item_id):
             return HttpResponse(result)
     return HttpResponseNotFound(f"Item with id={item_id} not found")
 
-def getitems(request):
-    result = "<h1> Список товаров <h1><ol>"
-    for item in items:
-        result += f""" <li><a href="/item/{item['id']}"> {item['name']} </li> """
-    result += "</ol>"
-    return HttpResponse(result)
+def get_items(request):
+    context = {
+        "items": items
+    }
+    return render(request, "items_list.html", context)
