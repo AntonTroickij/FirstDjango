@@ -2,8 +2,7 @@ from django.shortcuts import render
 # from django.http import HttpResponse
 from django.http import HttpResponseNotFound
 from MainApp.models import Item
- 
- # Create your views here.
+from django.core.exceptions import ObjectDoesNotExist
  
  
 # items = [
@@ -34,14 +33,15 @@ def about(request):
  
  
 def get_item(request, item_id: int):
-     item = next((item for item in items if item['id'] == item_id), None)
- 
-     if item is not None:
-         context = {
-             "item": item
-         }
-         return render(request, "item_page.html", context)
-     return HttpResponseNotFound(f"Item with id={item_id} not found")
+    ''' По указанному id возвращаем элемент из БД'''
+    try:
+        item = Item.objects.get(id=item_id)
+    except ObjectDoesNotExist:
+        return HttpResponseNotFound(f"Item with id={item_id} not found")
+    else:
+        context = {"item": item}
+        return render(request, "item_page.html", context)
+
  
  
 def get_items(request):

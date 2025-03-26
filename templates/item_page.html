@@ -9,12 +9,13 @@
         / <a href="/"> Home</a> / <a href="/items"> Items </a>/ <a href="/about"> About</a>
     </header>
     
-    <h2> Список товаров </h2>
+    <h2> Имя: {{ item.name }} </h2>
+    {% if item.count == 0 %}
+        Количество: Товар отсутствует
+    {% else %}
+        Количество: {{ item.count }}
+    {% endif %}
 
-    <ol>
-        {% for item in items %}
-            <li><a href="/item/{{ item.id }}"> {{ item.name }} </a></li>        
-        {% endfor %}
-    </ol>
+    <p> <a href="/items"> Назад к списку товаров </a></p>
 </body>
 </html>
