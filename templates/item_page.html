@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Item page </title>
+    <title> Items list </title>
 </head>
 <body>
     <header>
         / <a href="/"> Home</a> / <a href="/items"> Items </a>/ <a href="/about"> About</a>
     </header>
+    
+    <h2> Список товаров </h2>
 
-    <h2> Имя: {{ item.name }} <h2>
-    {% if item.quantity == 0 %}
-        Количество: Товар отсутствует
-    {% else %}
-        Количество: {{ item.quantity }}
-    {% endif %}
-
-    <p> <a href="/items"> Назад к списку товаров </a></p>
+    <ol>
+        {% for item in items %}
+            <li><a href="/item/{{ item.id }}"> {{ item.name }} </a></li>        
+        {% endfor %}
+    </ol>
 </body>
 </html>
