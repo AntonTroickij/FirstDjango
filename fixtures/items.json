@@ -5,7 +5,8 @@
     "fields": {
         "name": "Кроссовки",
         "brand": "abibas",
-        "count": 10
+        "count": 10,
+        "description": "Описание элемента"
     }
 },
 {
@@ -14,8 +15,9 @@
     "fields": {
         "name": "Coca-cola bottle",
         "brand": "Coca-cola",
-        "count": 5
-    }  
+        "count": 5,
+        "description": "Описание элемента"
+    }
 },
 {
     "model": "MainApp.item",
@@ -23,16 +25,18 @@
     "fields": {
         "name": "Кепка",
         "brand": "Текстиль",
-        "count": 10
-    }  
+        "count": 10,
+        "description": "Описание элемента"
+    }
 },
 {
     "model": "MainApp.item",
     "pk": 4,
     "fields": {
         "name": "Картофель фри",
-        "brand": "Где вкусно",
-        "count": 0
-    }  
+        "brand": "где вкусно",
+        "count": 0,
+        "description": "Описание элемента"
+    }
 }
 ]
