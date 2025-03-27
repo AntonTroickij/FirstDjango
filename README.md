@@ -1,4 +1,4 @@
-# FirstDjango_18052024
+# Snippets_08062024
 
 ## Инструкция по развертыванию проекта
 1. 'python3 -m venv django_venv'
